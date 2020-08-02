@@ -1378,8 +1378,6 @@ bindkey "^[[6~" down-line-or-history\n\
 bindkey "^?" backward-delete-char\n' >> /home/laradock/.zshrc \
 ;fi
 
-USER root
-
 #
 #--------------------------------------------------------------------------
 # Final Touch
@@ -1387,6 +1385,10 @@ USER root
 #
 
 USER root
+
+EXPOSE 6001
+
+RUN apt-get install -y htop 
 
 # Clean up
 RUN apt-get clean && \
